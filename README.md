@@ -1,1 +1,1 @@
-# pr-review-bot
+# go pr-review-bot - mvp

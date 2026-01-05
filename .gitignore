@@ -1,0 +1,11 @@
+# Build artifacts
+/bin/
+
+# Local env
+.env
+
+# Go
+*.out
+*.test
+
+.envrc
