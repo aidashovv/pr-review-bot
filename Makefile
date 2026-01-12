@@ -1,4 +1,3 @@
-APP_TG=pr-review-tg-bot
 APP_MCP=mcp-github
 BIN_DIR=bin
 
@@ -12,20 +11,13 @@ LDFLAGS=-ldflags "\
   -X 'github.com/aidashovv/pr-review-bot/internal/buildinfo.Built=$(BUILT)' \
 "
 
-.PHONY: build build-bot build-mcp run-bot run-mcp
+.PHONY: build build-mcp run-mcp
 
-build: build-bot build-mcp
-
-build-bot:
-	@mkdir -p $(BIN_DIR)
-	CGO_ENABLED=0 go build $(LDFLAGS) -o $(BIN_DIR)/$(APP_TG) ./cmd/tg-bot
+build: build-mcp
 
 build-mcp:
 	@mkdir -p $(BIN_DIR)
 	CGO_ENABLED=0 go build $(LDFLAGS) -o $(BIN_DIR)/$(APP_MCP) ./cmd/mcp-github
-
-run-bot:
-	go run ./cmd/tg-bot
 
 run-mcp:
 	go run ./cmd/mcp-github

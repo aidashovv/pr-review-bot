@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "pr-reviewer": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/bin/mcp-github",
+      "args": [],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}
